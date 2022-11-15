@@ -94,12 +94,16 @@ ul{
 
 .homepage-left{
     flex-direction: column;
-    margin: 0 0 0 100px;
+    margin: 120px 0 0 100px;
 }
 
 .homepage-left h1{
     font-weight: 700;
-    font-size: 75px;
+    font-size: 70px;
+}
+
+.mobile-h1{
+    display: none;
 }
 .homepage-left p{
     font-size: 18px;
@@ -112,7 +116,7 @@ ul{
     border-radius: 10px;
     color: #fff;
     background-color: #000;
-    margin: 10px 0 120px;
+    margin: 10px 0 40px;
 
 }
 
@@ -127,6 +131,10 @@ ul{
     height: 75vh;
 }
 
+.homepage-mobile-img{
+    display: none;
+}
+
 .homepage-left, .homepage-right{
     flex: 1;
 }
@@ -136,4 +144,220 @@ ul{
 }
 .main-icons img{
     padding: 10px;   
+}
+
+.hamburger{
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    position: relative;
+    background: none;
+    border: none;
+    z-index: 10;
+    transition: all 0.25s;
+    display: none;
+}
+
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 29px;
+    height: 2px;
+    background: #000;
+    transform: rotate(0);
+    transition: all 0.5s;
+}
+
+.hamburger-middle{
+    transform: translateY(7px);
+}
+.hamburger-bottom{
+    transform: translateY(14px);
+}
+
+.open .hamburger-top{
+    transform: rotate(45deg) translateY(6px) translateX(6px);
+}
+.open .hamburger-middle{
+    display: none;
+}
+.open .hamburger-bottom{
+    transform: rotate(-45deg) translateY(6px) translateX(-6px);
+}
+
+/* Mobile Menu */
+.mobile-menu{
+    position: fixed;
+    top: 75px;
+    right: 0;
+    background-color: #fff;
+    color:hsl(0, 0%, 41%);;
+    width: 60%;
+    height: 100%;
+    padding: 15px 0;
+    transition: all 0.3s;
+}
+
+.navbar-mobile{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content:start;
+}
+
+.navbar-mobile li{
+    display: flex;
+    align-items: center;
+}
+
+.navbar-mobile .ul{
+    display: flex;
+    align-items: center;
+}
+
+.navbar-mobile li{
+    margin: 10px 12px;
+    font-weight: 500;
+    text-decoration: none; 
+}
+
+.navbar-mobile a{
+    color: hsl(0, 0%, 41%);
+    text-decoration: none;
+}
+
+
+.navbar-mobile .btn{
+    color: hsl(0, 0%, 41%);
+    font-weight: 500;
+}
+.navbar-mobile .register{ 
+    border-color: hsl(0, 0%, 41%);
+    border: 2px solid;
+    padding: 7px 55px;
+    border-radius: 15px;
+}
+
+.navbar-mobile-bottom{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hidden{
+   transform: translateX(100%);
+}
+
+.no-scroll{
+    overflow: hidden;
+}
+
+.shadow-background{
+    opacity: 0.6;
+}
+
+
+@media (max-width: 768px){
+
+    .hamburger{
+        display: block;
+    }
+    .homepage{
+        flex-direction: column-reverse;
+        margin: 0;
+    }
+
+    .homepage-right img{
+        display: none;
+    }
+
+    .homepage-mobile-img {
+        display: contents;
+    
+    }
+    .homepage-mobile-img img{
+        width: 95vw;
+    }
+
+    .homepage-left{
+        margin: 50px 10px;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        text-align: center;
+    }
+
+    .desktop-h1{
+        display: none;
+    }
+
+    .mobile-h1{
+        display: contents;
+        font-size: 50px;
+    }
+
+    .homepage-left h1{
+        font-weight: 700;
+        font-size: 35px;
+    }
+
+    .homepage-left p{
+        font-size: 18px;
+        color: hsl(0, 0%, 41%);
+        align-items: center;
+        justify-content: center;
+        margin: 20px 25px;
+        padding: 0 40px;
+        
+    }
+
+    .navbar-left, .navbar-right{
+        display: none;
+    }
+
+    .logo{
+        font-size: 30px;
+        font-weight: 700;
+        padding-bottom: 26px;
+        color: #000;
+    }
+    .navbar-container{
+        padding: 0 30px;
+    }
+}
+
+@media(max-width: 375px){
+   
+    .homepage{
+        flex-direction: column-reverse;
+        margin: 0;
+    }
+    .homepage-mobile-img img{
+        width: 95vw;
+    }
+
+    .homepage-left{
+        margin: 40px 3px;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        text-align: center;
+    }
+
+    .main-icons img{
+        width: 20vw;  
+    }
+
+    .homepage-left p{
+        font-size: 18px;
+        color: hsl(0, 0%, 41%);;
+        align-items: center;
+        justify-content: center;
+        margin: 20px 9px;
+        padding: 0 10px;  
+    }
+
 }
